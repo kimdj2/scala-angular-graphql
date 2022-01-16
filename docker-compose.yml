@@ -1,0 +1,34 @@
+version: '3'
+services:
+  sbt:
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: ./back/Dockerfile
+    container_name: sbt
+    command: sbt
+    volumes:
+        # このプロジェクト自体をコンテナ内の/rootディレクトリにマウント
+        - ./back:/work/back
+    ports:
+        - 9000:9000
+    expose:
+        - "9000"
+    tty: true
+  db:
+    platform: linux/x86_64
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+        MYSQL_DATABASE: playdb
+        MYSQL_USER: playdb
+        MYSQL_PASSWORD: playdb
+        MYSQL_ROOT_PASSWORD: root
+    volumes:
+        - ./db/data:/var/lib/mysql # データを永続化するためローカルにデータをマウント
+        - ./db/sql:/docker-entrypoint-initdb.d # 初期データの投入関係
+        - ./db/my.cnf:/etc/mysql/conf.d/my.cnf # 文字コード設定用
+    ports:
+        - "3306:3306"
+    expose:
+        - "3306"
