@@ -1,0 +1,1 @@
+# scala-angular-graphql
