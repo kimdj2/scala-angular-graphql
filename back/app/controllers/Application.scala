@@ -8,7 +8,7 @@ import play.api.Configuration
 import sangria.execution._
 import sangria.parser.{QueryParser, SyntaxError}
 import sangria.marshalling.playJson._
-import graphql.GraphQL
+import graphql.GraphQLSchema
 import sangria.execution.deferred.DeferredResolver
 import sangria.renderer.SchemaRenderer
 import sangria.slowlog.SlowLog
@@ -16,10 +16,9 @@ import sangria.slowlog.SlowLog
 import scala.concurrent.Future
 import scala.util.{Failure, Success}
 
-class Application @Inject() (graphqlConf: GraphQL, system: ActorSystem, config: Configuration) extends InjectedController {
+class Application @Inject() (graphQLSchema: GraphQLSchema, system: ActorSystem, config: Configuration) extends InjectedController {
   import system.dispatcher
 
-  val googleAnalyticsCode = config.getOptional[String]("gaCode")
   val defaultGraphQLUrl   = config.getOptional[String]("defaultGraphQLUrl").getOrElse(s"http://localhost:${config.getOptional[Int]("http.port").getOrElse(9000)}/graphql")
 
   def index = Action {
@@ -27,7 +26,7 @@ class Application @Inject() (graphqlConf: GraphQL, system: ActorSystem, config: 
   }
   
   def playground = Action {
-    Ok(views.html.playground(googleAnalyticsCode))
+    Ok(views.html.playground())
   }
 
   def graphql(query: String, variables: Option[String], operation: Option[String]) = Action.async { request =>
@@ -55,7 +54,7 @@ class Application @Inject() (graphqlConf: GraphQL, system: ActorSystem, config: 
       // query parsed successfully, time to execute it!
       case Success(queryAst) =>
         Executor.execute(
-            schema = graphqlConf.Schema, 
+            schema = graphQLSchema.Schema, 
             queryAst = queryAst, 
             operationName = operation,
             variables = variables getOrElse Json.obj(),
@@ -81,6 +80,6 @@ class Application @Inject() (graphqlConf: GraphQL, system: ActorSystem, config: 
   def isTracingEnabled(request: Request[_]) = request.headers.get("X-Apollo-Tracing").isDefined
 
   def renderSchema = Action {
-    Ok(SchemaRenderer.renderSchema(graphqlConf.Schema))
+    Ok(SchemaRenderer.renderSchema(graphQLSchema.Schema))
   }
 }

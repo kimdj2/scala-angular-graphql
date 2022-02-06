@@ -15,12 +15,11 @@ class PostSchema @Inject()(postResolver: PostResolver)(implicit ec: ExecutionCon
 
   object FieldNames extends Enumeration {
 
-    val postsAll: Value = Value("postsAll")
-    val addPost: Value = Value("addPost")
-    val findPost: Value = Value("findPost")
+    val postsAll:   Value = Value("postsAll")
+    val addPost:    Value = Value("addPost")
+    val findPost:   Value = Value("findPost")
     val deletePost: Value = Value("deletePost")
-    val editPost: Value = Value("editPost")
-    val postsUpdated: Value = Value("postsUpdated")
+    val editPost:   Value = Value("editPost")
 
     implicit def valueToString(value: Value): String = value.toString
   }
