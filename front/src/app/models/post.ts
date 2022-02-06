@@ -1,10 +1,10 @@
-export type Post = {
+export interface Post {
   id: number;
   title: string;
   content: string;
 }
 
-export type AddPost = {
+export interface AddPost {
   title: string;
   content: string;
 }

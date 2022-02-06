@@ -23,10 +23,7 @@ export class PostService {
     return this.apollo.watchQuery<{posts: Post[]}>({
       query: POSTS_ALL,
       fetchPolicy: "network-only"
-    }).valueChanges.pipe(map(({data}) => {
-      console.log(data);
-      return data.posts
-    }));
+    }).valueChanges.pipe(map(({data}) => data.posts));
   }
 
   addPost(addPost: AddPost) {
