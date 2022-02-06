@@ -1,5 +1,29 @@
 <div>
-    <div *ngFor="let post of posts | async">
-        {{post.title}}
+    <div class="add-area">
+        <form [formGroup]="postForm" (submit)="onAdd()">
+            <div>
+                <input type="text" formControlName="title" placeholder="title"/>
+            </div>
+            <div>
+                <input type="text" formControlName="content" placeholder="content"/>
+            </div>
+            <div class="button-area">
+                <button type="submit">追加</button>    
+            </div>
+        </form>
+    </div>
+    <div class="table">
+        <div class="table-header">
+            <div>title</div>
+            <div>content</div>
+        </div>
+        <div class="table-row" *ngFor="let post of posts | async">
+            <div>
+                {{post.title}}
+            </div>
+            <div>
+                {{post.content}}
+            </div>
+        </div>
     </div>
 </div>

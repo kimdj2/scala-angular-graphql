@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { PostComponent } from './components/post/post.component';
 import { Apollo } from 'apollo-angular';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { Apollo } from 'apollo-angular';
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,
+    ReactiveFormsModule,
   ],
   providers: [
     Apollo,

@@ -1,7 +1,9 @@
+import { variable } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { map } from 'rxjs/operators';
-import { Post } from 'src/app/models/post';
+import { AddPost, Post } from 'src/app/models/post';
+import { ADD_POST } from './post.mutation';
 import { POSTS_ALL } from './post.query';
 
 @Injectable({
@@ -19,7 +21,22 @@ export class PostService {
    */
   getAllPosts() {
     return this.apollo.watchQuery<{posts: Post[]}>({
-      query: POSTS_ALL
-    }).valueChanges.pipe(map(({data}) => data.posts));
+      query: POSTS_ALL,
+      fetchPolicy: "network-only"
+    }).valueChanges.pipe(map(({data}) => {
+      console.log(data);
+      return data.posts
+    }));
+  }
+
+  addPost(addPost: AddPost) {
+    const {title, content} = addPost;
+    return this.apollo.mutate({
+      mutation: ADD_POST,
+      variables: {
+        title,
+        content
+      }
+    })
   }
 }

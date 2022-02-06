@@ -1,0 +1,30 @@
+:host {
+  .add-area{
+    margin-bottom: 20px;
+    .button-area {
+      margin-top: 10px;
+    }
+  }
+  .table {
+    display:table;
+    border: 1px solid #ccc;
+  
+    &-header {
+      display: table-header-group;
+      div {
+        display: table-cell;
+        font-weight: bold;
+        border: 1px solid #ccc;
+      }
+    }
+  
+    &-row {
+      display:table-row;
+
+      div {
+        display: table-cell;
+        border: 1px solid #ccc;
+      }
+    }
+  }  
+}
