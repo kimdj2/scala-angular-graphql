@@ -879,3 +879,13 @@ Caused by: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories
 2022.02.07 23:22:27 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/NotFoundException.scala[0m
 2022.02.07 23:22:27 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/NotFoundException.scala[0m
 2022.02.07 23:22:29 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/AlreadyExistsException.scala[0m
+2022.02.07 23:25:17 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:25:20 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:25:26 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:25:29 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:25:34 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:25:34 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:25:37 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:25:41 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:25:41 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:25:42 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m

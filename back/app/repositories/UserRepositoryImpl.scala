@@ -1,7 +1,7 @@
 package repositories
 
 import javax.inject.{Inject, Singleton}
-import errors.{AlreadyExists, AmbiguousResult, NotFound}
+import errors.{ AlreadyExistsException, DBException, NotFoundException }
 import models.User
 import play.api.db.slick.{DatabaseConfigProvider, HasDatabaseConfigProvider}
 import slick.jdbc.JdbcProfile
