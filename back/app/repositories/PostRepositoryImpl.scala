@@ -42,23 +42,23 @@ class PostRepositoryImpl @Inject()(protected val dbConfigProvider: DatabaseConfi
 
     def create(post: Post): DBIO[Post] =
       for {
-        maybePost <- post.id.fold[DBIO[Option[Post]]](DBIO.successful(None))(find)
-        maybePostId <- maybePost match {
-          case Some(_) => DBIO.failed(AlreadyExists(s"Post id: ${post.id} already exists"))
-          case _ => postQuery returning postQuery.map(_.id) += post
+        targetPost   <- post.id.fold[DBIO[Option[Post]]](DBIO.successful(None))(find)
+        targetPostId <- targetPost match {
+          case Some(_) => DBIO.failed(AlreadyExistsException(s"Post id: ${post.id}"))
+          case _       => postQuery returning postQuery.map(_.id) += post
         }
-        maybePost <- find(maybePostId)
-        post <- maybePost match {
+        targetPost <- find(targetPostId)
+        post       <- targetPost match {
           case Some(value) => DBIO.successful(value)
-          case _ => DBIO.failed(AmbiguousResult(s"Failed to save the post [post=$post]"))
+          case _           => DBIO.failed(DBException("Create Fail"))
         }
       } yield post
 
 
     def find(id: Long): DBIO[Option[Post]] = for {
-      maybePost <- postQuery.filter(_.id === id).result
-      post <- if (maybePost.lengthCompare(2) < 0) DBIO.successful(maybePost.headOption)
-      else DBIO.failed(AmbiguousResult(s"Several posts with the same id = $id"))
+      targetPost <- postQuery.filter(_.id === id).result
+      post       <- if (targetPost.lengthCompare(2) < 0) DBIO.successful(targetPost.headOption)
+                    else DBIO.failed(DBException("Find Fail"))
     } yield post
 
 
@@ -67,23 +67,23 @@ class PostRepositoryImpl @Inject()(protected val dbConfigProvider: DatabaseConfi
     } yield posts.toList
 
     def update(post: Post): DBIO[Post] = for {
-      maybeId <- post.id.fold[DBIOAction[Long, _, Effect]](DBIO.failed(NotFound(s"Not found 'id' in the [post=$post]")))(DBIO.successful)
-      count <- postQuery.filter(_.id === maybeId).update(post)
-      result <- count match {
-        case 0 => DBIO.failed(NotFound(s"Cannot find a post with the ID=${post.id.get}"))
+      targetId <- post.id.fold[DBIOAction[Long, _, Effect]](DBIO.failed(NotFoundException("Not found id: ${post.id}")))(DBIO.successful)
+      count    <- postQuery.filter(_.id === targetId).update(post)
+      result   <- count match {
+        case 0 => DBIO.failed(NotFoundException("Update Fail"))
         case _ => DBIO.successful(post)
       }
     } yield result
 
     def delete(id: Long): DBIO[Option[Post]] = for {
-      maybePost <- find(id)
-      maybeDelete <- maybePost match {
+      targetPost   <- find(id)
+      targetDelete <- targetPost match {
         case Some(_) => postQuery.filter(_.id === id).delete
-        case _ => DBIO.failed(NotFound(s"Cannot find a post with [ID=$id]"))
+        case _       => DBIO.failed(NotFoundException("Delete Fail"))
       }
-      result <- maybeDelete match {
-        case 1 => DBIO.successful(maybePost)
-        case _ => DBIO.failed(AmbiguousResult(s"Failed to delete the post with the [ID=$id]"))
+      result <- targetDelete match {
+        case 1 => DBIO.successful(targetPost)
+        case _ => DBIO.failed(DBException("Delete Fail"))
       }
     } yield result
   }

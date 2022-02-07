@@ -11,14 +11,10 @@ case class Post(
 )
 
 object Post extends ((Option[Long], String, String) => Post) {
-
   class PostTable(slickTag: SlickTag) extends Table[Post](slickTag, "post") {
-    def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
-
-    def title = column[String]("title")
-
+    def id      = column[Long]  ("id", O.PrimaryKey, O.AutoInc)
+    def title   = column[String]("title")
     def content = column[String]("content")
-
-    def * = (id.?, title, content).mapTo[Post]
+    def *       = (id.?, title, content).mapTo[Post]
   }
 }

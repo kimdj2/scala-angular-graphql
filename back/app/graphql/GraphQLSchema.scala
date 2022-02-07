@@ -9,10 +9,6 @@ class GraphQLSchema @Inject()(
   userSchema: UserSchema
 ) {
 
-  /**
-    * Contains a GraphQL schema for the entire application.
-    * You can add more queries, mutations, and subscriptions for each model.
-    */
   val Schema = sangria.schema.Schema(
     query = ObjectType(
       "Query",

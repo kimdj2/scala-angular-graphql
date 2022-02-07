@@ -43,23 +43,23 @@ class UserRepositoryImpl @Inject()(protected val dbConfigProvider: DatabaseConfi
 
     def create(user: User): DBIO[User] =
       for {
-        maybeUser   <- user.id.fold[DBIO[Option[User]]](DBIO.successful(None))(find)
-        maybeUserId <- maybeUser match {
-          case Some(_) => DBIO.failed(AlreadyExists(s"User id: ${user.id} already exists"))
+        targetUser   <- user.id.fold[DBIO[Option[User]]](DBIO.successful(None))(find)
+        targetUserId <- targetUser match {
+          case Some(_) => DBIO.failed(AlreadyExistsException(s"User id: ${user.id}"))
           case _       => userQuery returning userQuery.map(_.id) += user
         }
-        maybeUser <- find(maybeUserId)
-        user      <- maybeUser match {
+        targetUser <- find(targetUserId)
+        user       <- targetUser match {
           case Some(value) => DBIO.successful(value)
-          case _           => DBIO.failed(AmbiguousResult(s"Failed to save the user [user=$user]"))
+          case _           => DBIO.failed(DBException("Create Fail"))
         }
       } yield user
 
 
     def find(id: Long): DBIO[Option[User]] = for {
-      maybeUser <- userQuery.filter(_.id === id).result
-      user      <- if (maybeUser.lengthCompare(2) < 0) DBIO.successful(maybeUser.headOption)
-                   else DBIO.failed(AmbiguousResult(s"Several users with the same id = $id"))
+      targetUser <- userQuery.filter(_.id === id).result
+      user <- if (targetUser.lengthCompare(2) < 0) DBIO.successful(targetUser.headOption)
+      else DBIO.failed(DBException("Find Fail"))
     } yield user
 
 
@@ -68,23 +68,23 @@ class UserRepositoryImpl @Inject()(protected val dbConfigProvider: DatabaseConfi
     } yield users.toList
 
     def update(user: User): DBIO[User] = for {
-      maybeId <- user.id.fold[DBIOAction[Long, _, Effect]](DBIO.failed(NotFound(s"Not found 'id' in the [user=$user]")))(DBIO.successful)
-      count   <- userQuery.filter(_.id === maybeId).update(user)
-      result  <- count match {
-        case 0 => DBIO.failed(NotFound(s"Cannot find a user with the ID=${user.id.get}"))
+      targetId <- user.id.fold[DBIOAction[Long, _, Effect]](DBIO.failed(NotFoundException("Not found id: ${user.id}")))(DBIO.successful)
+      count    <- userQuery.filter(_.id === targetId).update(user)
+      result   <- count match {
+        case 0 => DBIO.failed(NotFoundException("Update Fail"))
         case _ => DBIO.successful(user)
       }
     } yield result
 
     def delete(id: Long): DBIO[Option[User]] = for {
-      maybeUser   <- find(id)
-      maybeDelete <- maybeUser match {
+      targetUser   <- find(id)
+      targetDelete <- targetUser match {
         case Some(_) => userQuery.filter(_.id === id).delete
-        case _       => DBIO.failed(NotFound(s"Cannot find a user with [ID=$id]"))
+        case _       => DBIO.failed(NotFoundException("Delete Fail"))
       }
-      result <- maybeDelete match {
-        case 1 => DBIO.successful(maybeUser)
-        case _ => DBIO.failed(AmbiguousResult(s"Failed to delete the user with the [ID=$id]"))
+      result <- targetDelete match {
+        case 1 => DBIO.successful(targetUser)
+        case _ => DBIO.failed(DBException("Delete Fail"))
       }
     } yield result
   }

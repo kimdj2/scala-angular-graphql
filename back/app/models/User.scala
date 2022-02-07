@@ -12,16 +12,11 @@ case class User(
 )
 
 object User extends ((Option[Long], String, String, String) => User) {
-
   class UserTable(slickTag: SlickTag) extends Table[User](slickTag, "user") {
-    def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
-
-    def name = column[String]("name")
-
-    def tel = column[String]("tel")
-
+    def id    = column[Long]("id", O.PrimaryKey, O.AutoInc)
+    def name  = column[String]("name")
+    def tel   = column[String]("tel")
     def email = column[String]("email")
-
-    def * = (id.?, name, tel, email).mapTo[User]
+    def *     = (id.?, name, tel, email).mapTo[User]
   }
 }

@@ -678,3 +678,204 @@
 2022.02.07 22:56:26 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/GraphQLSchema.scala[0m
 2月 07, 2022 11:04:14 午後 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 情報: Unsupported notification method: $/setTrace
+2022.02.07 23:09:21 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/NotFound.scala[0m
+2022.02.07 23:09:26 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/AlreadyExists.scala[0m
+2022.02.07 23:09:30 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/AmbiguousResult.scala[0m
+2022.02.07 23:10:09 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/DBException.scala[0m
+2022.02.07 23:10:14 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/NotFoundException.scala[0m
+2022.02.07 23:10:20 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/AlreadyExistsException.scala[0m
+2022.02.07 23:10:23 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/AlreadyExistsException.scala[0m
+2022.02.07 23:10:29 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/DBException.scala[0m
+2022.02.07 23:10:29 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/DBException.scala[0m
+2022.02.07 23:10:32 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/NotFoundException.scala[0m
+2022.02.07 23:10:40 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:10:47 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:10:51 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:10:57 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:11:01 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:11:16 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:11:20 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:11:23 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2月 07, 2022 11:11:23 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+重大: Internal error: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala:53: error: unclosed string interpolation
+          case _ => DBIO.failed(DBException(s"Fiails ${post"))
+                                                            ^
+java.util.concurrent.CompletionException: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala:53: error: unclosed string interpolation
+          case _ => DBIO.failed(DBException(s"Fiails ${post"))
+                                                            ^
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:331)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:346)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:704)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2088)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala:53: error: unclosed string interpolation
+          case _ => DBIO.failed(DBException(s"Fiails ${post"))
+                                                            ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringPart(LegacyScanner.scala:775)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:431)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:450)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:251)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.acceptBalancedDelimeters(ScalaToplevelMtags.scala:274)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.loop(ScalaToplevelMtags.scala:172)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.indexRoot(ScalaToplevelMtags.scala:50)
+	at scala.meta.internal.mtags.MtagsIndexer.index(MtagsIndexer.scala:19)
+	at scala.meta.internal.mtags.MtagsIndexer.index$(MtagsIndexer.scala:18)
+	at scala.meta.internal.mtags.ScalaToplevelMtags.index(ScalaToplevelMtags.scala:40)
+	at scala.meta.internal.mtags.Mtags$.allToplevels(Mtags.scala:96)
+	at scala.meta.internal.metals.DefinitionProvider.fromMtags(DefinitionProvider.scala:230)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$3(DefinitionProvider.scala:191)
+	at scala.Option.orElse(Option.scala:447)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$positionOccurrence$1(DefinitionProvider.scala:191)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.metals.DefinitionProvider.positionOccurrence(DefinitionProvider.scala:186)
+	at scala.meta.internal.metals.DocumentHighlightProvider.$anonfun$documentHighlight$1(DocumentHighlightProvider.scala:33)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.metals.DocumentHighlightProvider.documentHighlight(DocumentHighlightProvider.scala:29)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$documentHighlights$1(MetalsLanguageServer.scala:1428)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	... 4 more
+
+2022.02.07 23:11:24 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:11:26 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2月 07, 2022 11:11:30 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 9891
+2022.02.07 23:11:31 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:11:44 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:11:54 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:11:56 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:12:03 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:12:07 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:12:17 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:12:29 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:12:31 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:12:33 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:12:35 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:12:38 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:12:54 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:13:02 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:13:05 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:13:19 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:13:35 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:14:16 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:14:20 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:14:27 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:14:40 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:14:51 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:14:54 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:14:57 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:14:59 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:15:00 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:15:02 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:15:09 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:15:13 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:15:18 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:15:21 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:15:33 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:15:37 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:15:42 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:15:45 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:15:59 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:16:01 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:16:10 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:16:17 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:16:23 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:16:24 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:16:26 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:16:29 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:16:34 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:16:37 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:16:44 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:16:46 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:16:52 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:02 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:07 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:08 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:09 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:17 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:20 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:23 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:30 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:35 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:38 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:39 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:41 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:47 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:17:56 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:17:56 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:18:00 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:18:02 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:18:05 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:18:08 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:18:11 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:18:15 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:18:18 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:18:23 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:18:28 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+2022.02.07 23:18:35 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:18:38 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:18:45 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:18:47 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.07 23:19:14 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepository.scala[0m
+2022.02.07 23:19:16 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepository.scala[0m
+2022.02.07 23:19:20 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepository.scala[0m
+2022.02.07 23:19:25 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepository.scala[0m
+2022.02.07 23:19:26 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepository.scala[0m
+2022.02.07 23:19:29 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepository.scala[0m
+2022.02.07 23:19:41 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/Post.scala[0m
+2022.02.07 23:19:43 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/Post.scala[0m
+2022.02.07 23:19:44 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/Post.scala[0m
+2022.02.07 23:19:47 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/Post.scala[0m
+2022.02.07 23:19:48 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/Post.scala[0m
+2022.02.07 23:19:48 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/Post.scala[0m
+2022.02.07 23:19:56 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/Post.scala[0m
+2022.02.07 23:20:02 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/User.scala[0m
+2022.02.07 23:20:02 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/User.scala[0m
+2022.02.07 23:20:04 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/User.scala[0m
+2022.02.07 23:20:04 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/User.scala[0m
+2022.02.07 23:20:06 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/User.scala[0m
+2022.02.07 23:20:08 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/User.scala[0m
+2022.02.07 23:20:10 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/User.scala[0m
+2022.02.07 23:20:14 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/User.scala[0m
+2022.02.07 23:20:16 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/Post.scala[0m
+2022.02.07 23:20:16 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/models/Post.scala[0m
+2022.02.07 23:20:34 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/PostResolver.scala[0m
+2022.02.07 23:20:37 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/PostResolver.scala[0m
+2022.02.07 23:20:41 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/PostResolver.scala[0m
+2022.02.07 23:20:44 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/PostResolver.scala[0m
+2022.02.07 23:20:51 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/PostResolver.scala[0m
+2022.02.07 23:20:52 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/PostResolver.scala[0m
+2022.02.07 23:20:58 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/UserResolver.scala[0m
+2022.02.07 23:20:58 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/UserResolver.scala[0m
+2022.02.07 23:21:05 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/UserResolver.scala[0m
+2022.02.07 23:21:07 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/UserResolver.scala[0m
+2022.02.07 23:21:09 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/UserResolver.scala[0m
+2022.02.07 23:21:11 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/UserResolver.scala[0m
+2022.02.07 23:21:15 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/UserResolver.scala[0m
+2022.02.07 23:21:17 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/UserResolver.scala[0m
+2022.02.07 23:21:18 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/UserResolver.scala[0m
+2022.02.07 23:21:20 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/UserResolver.scala[0m
+2022.02.07 23:21:26 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/GraphQLSchema.scala[0m
+2022.02.07 23:21:39 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/controllers/Application.scala[0m
+2022.02.07 23:22:09 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/DBException.scala[0m
+2022.02.07 23:22:23 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/DBException.scala[0m
+2022.02.07 23:22:27 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/NotFoundException.scala[0m
+2022.02.07 23:22:27 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/NotFoundException.scala[0m
+2022.02.07 23:22:29 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/errors/AlreadyExistsException.scala[0m

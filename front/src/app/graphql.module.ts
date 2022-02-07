@@ -12,7 +12,6 @@ const uri = "http://localhost:9000/graphql";
 })
 export class GraphQLModule {
   constructor(apollo: Apollo, httpLink: HttpLink) {
-    // create Apollo
     apollo.create({
       link: httpLink.create({ uri }),
       cache: new InMemoryCache()

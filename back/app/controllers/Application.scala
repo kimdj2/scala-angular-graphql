@@ -51,7 +51,6 @@ class Application @Inject() (graphQLSchema: GraphQLSchema, system: ActorSystem, 
 
   private def executeQuery(query: String, variables: Option[JsObject], operation: Option[String], tracing: Boolean) =
     QueryParser.parse(query) match {
-      // query parsed successfully, time to execute it!
       case Success(queryAst) =>
         Executor.execute(
             schema = graphQLSchema.Schema, 
@@ -65,7 +64,6 @@ class Application @Inject() (graphQLSchema: GraphQLSchema, system: ActorSystem, 
             case error: ErrorWithResolver => InternalServerError(error.resolveError)
           }
 
-      // can't parse GraphQL query, return error
       case Failure(error: SyntaxError) =>
         Future.successful(BadRequest(Json.obj(
           "syntaxError" -> error.getMessage,
