@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { map } from 'rxjs/operators';
 import { AddPost, Post } from 'src/app/models/post';
-import { ADD_POST } from './post.mutation';
+import { ADD_POST, DELETE_POST } from './post.mutation';
 import { POSTS_ALL } from './post.query';
 
 @Injectable({
@@ -36,4 +36,14 @@ export class PostService {
       }
     })
   }
+
+  deletePost(id: number) {
+    return this.apollo.mutate({
+      mutation: DELETE_POST,
+      variables: {
+        id,
+      }
+    })
+  }
+
 }

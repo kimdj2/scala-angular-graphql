@@ -26,9 +26,14 @@ export class PostComponent implements OnInit {
     this.posts = this.postService.getAllPosts();
   }
 
-  onAdd(): void{
-    console.log(this.postForm.value)
+  onAdd(): void {
     this.postService.addPost(this.postForm.value).subscribe(() => {
+      this.posts = this.postService.getAllPosts();
+    })
+  }
+
+  onDelete(id: number): void {
+    this.postService.deletePost(id).subscribe(() => {
       this.posts = this.postService.getAllPosts();
     })
   }
