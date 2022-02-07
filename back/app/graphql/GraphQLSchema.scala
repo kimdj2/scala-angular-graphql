@@ -1,15 +1,13 @@
 package graphql
 
 import javax.inject.Inject
-import graphql.schemas.PostSchema
+import graphql.schemas.{PostSchema, UserSchema}
 import sangria.schema.{ObjectType, fields}
 
-/**
-  * A basic component for a GraphQL schema.
-  *
-  * @param postSchema an object containing all queries, mutations, and subscriptions to work with the Post entity
-  */
-class GraphQLSchema @Inject()(postSchema: PostSchema) {
+class GraphQLSchema @Inject()(
+  postSchema: PostSchema,
+  userSchema: UserSchema
+) {
 
   /**
     * Contains a GraphQL schema for the entire application.
@@ -19,14 +17,16 @@ class GraphQLSchema @Inject()(postSchema: PostSchema) {
     query = ObjectType(
       "Query",
       fields(
-        postSchema.Queries: _*
+        postSchema.Queries ++ 
+        userSchema.Queries: _*
       )
     ),
     mutation = Some(
       ObjectType(
         "Mutation",
         fields(
-          postSchema.Mutations: _*
+          postSchema.Mutations ++ 
+          userSchema.Mutations: _*
         )
       )
     )

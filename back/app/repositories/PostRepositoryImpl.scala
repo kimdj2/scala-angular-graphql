@@ -8,12 +8,6 @@ import slick.jdbc.JdbcProfile
 
 import scala.concurrent.{ExecutionContext, Future}
 
-/**
-  * An implementation of PostRepository for the Post entity.
-  *
-  * @param database         the database instance
-  * @param executionContext execute program logic asynchronously, typically but not necessarily on a thread pool
-  */
 @Singleton
 class PostRepositoryImpl @Inject()(protected val dbConfigProvider: DatabaseConfigProvider)
                                   (implicit val executionContext: ExecutionContext) extends PostRepository with HasDatabaseConfigProvider[JdbcProfile] {
@@ -24,65 +18,33 @@ class PostRepositoryImpl @Inject()(protected val dbConfigProvider: DatabaseConfi
 
   def postQuery = TableQuery[Post.PostTable]
 
-  /**
-    * Creates a Post instance.
-    *
-    * @param post a new Post instance
-    * @return the created Post instance
-    */
   override def create(post: Post): Future[Post] = DB.run {
     Actions.create(post)
   }
 
-  /**
-    * Returns an instance found by ID.
-    *
-    * @param id the Post instance ID
-    * @return the found Post instance
-    */
   override def find(id: Long): Future[Option[Post]] = DB.run {
     Actions.find(id)
   }
 
-  /**
-    * Returns a list of Post instances.
-    *
-    * @return the list of Post instances
-    */
   override def findAll(): Future[List[Post]] = DB.run {
     Actions.findAll()
   }
 
-  /**
-    * Updates an existing Post instance.
-    *
-    * @param post the new Post instance
-    * @return the updated Post instance
-    */
   override def update(post: Post): Future[Post] = DB.run {
     Actions.update(post)
   }
 
-  /**
-    * Deletes an existing Post instance found by ID.
-    *
-    * @param id the Post instance ID
-    * @return the boolean result
-    */
   override def delete(id: Long): Future[Option[Post]] = DB.run {
     Actions.delete(id)
   }
 
-  /**
-    * Provides an implementation for CRUD operations with the Post entity.
-    */
   object Actions {
 
     def create(post: Post): DBIO[Post] =
       for {
         maybePost <- post.id.fold[DBIO[Option[Post]]](DBIO.successful(None))(find)
         maybePostId <- maybePost match {
-          case Some(_) => DBIO.failed(AlreadyExists(s"The post with the ID=${post.id} already exists"))
+          case Some(_) => DBIO.failed(AlreadyExists(s"Post id: ${post.id} already exists"))
           case _ => postQuery returning postQuery.map(_.id) += post
         }
         maybePost <- find(maybePostId)
