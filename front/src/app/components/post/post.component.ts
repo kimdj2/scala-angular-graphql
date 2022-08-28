@@ -11,7 +11,7 @@ import { PostService } from 'src/app/services/post/post.service';
 })
 export class PostComponent implements OnInit {
 
-  posts: Observable<Post[]>;
+  posts!: Observable<Post[]>;
   postForm!: UntypedFormGroup;
 
   constructor(

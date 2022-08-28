@@ -889,3 +889,74 @@ Caused by: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories
 2022.02.07 23:25:41 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
 2022.02.07 23:25:41 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
 2022.02.07 23:25:42 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepositoryImpl.scala[0m
+2022.02.09 23:44:31 INFO  shutting down Metals[0m
+2022.02.12 18:04:24 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/kimdongjin/project/scala-angular-graphql/.metals/lsp.trace.json or /Users/kimdongjin/Library/Caches/org.scalameta.metals/lsp.trace.json[0m
+2022.02.12 18:04:25 INFO  logging to file /Users/kimdongjin/project/scala-angular-graphql/.metals/metals.log[0m
+2022.02.12 18:04:25 INFO  Started: Metals version 0.11.1 in workspace '/Users/kimdongjin/project/scala-angular-graphql' for client Visual Studio Code 1.64.0.[0m
+2022.02.12 18:04:25 INFO  Parse release: 11.0.13[0m
+2022.02.12 18:04:26 INFO  time: initialize in 1.15s[0m
+2022.02.12 18:04:26 WARN  Build server is not auto-connectable.[0m
+2022.02.12 18:04:26 WARN  no build tool detected in workspace '/Users/kimdongjin/project/scala-angular-graphql'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2022.02.12 18:04:26 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/GraphQLSchema.scala[0m
+2022.02.12 18:04:26 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/schemas/UserSchema.scala[0m
+2022.02.12 18:04:26 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/schemas/PostSchema.scala[0m
+2022.02.12 18:04:28 INFO  no build target found for /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/GraphQLSchema.scala. Using presentation compiler with project's scala-library version: 3.1.0[0m
+2022.02.12 18:04:30 INFO  time: code lens generation in 3.04s[0m
+2022.02.12 18:04:49 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/schemas/UserSchema.scala[0m
+2022.02.12 18:04:51 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/schemas/UserSchema.scala[0m
+2022.02.12 18:04:53 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/schemas/UserSchema.scala[0m
+2022.02.12 18:04:53 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/schemas/UserSchema.scala[0m
+2022.02.12 18:06:49 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/schemas/UserSchema.scala[0m
+2022.02.12 18:15:01 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/PostResolver.scala[0m
+2022.02.12 18:15:01 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/UserResolver.scala[0m
+2022.02.12 18:15:04 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/UserRepository.scala[0m
+2022.02.12 18:15:05 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/controllers/Application.scala[0m
+2022.02.13 22:12:21 INFO  shutting down Metals[0m
+2022.02.21 00:12:38 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/kimdongjin/project/scala-angular-graphql/.metals/lsp.trace.json or /Users/kimdongjin/Library/Caches/org.scalameta.metals/lsp.trace.json[0m
+2022.02.21 00:12:38 INFO  logging to file /Users/kimdongjin/project/scala-angular-graphql/.metals/metals.log[0m
+2022.02.21 00:12:38 INFO  Started: Metals version 0.11.1 in workspace '/Users/kimdongjin/project/scala-angular-graphql' for client Visual Studio Code 1.64.2.[0m
+2022.02.21 00:12:38 INFO  Parse release: 11.0.13[0m
+2022.02.21 00:12:39 INFO  time: initialize in 1.31s[0m
+2022.02.21 00:12:40 WARN  Build server is not auto-connectable.[0m
+2022.02.21 00:12:40 WARN  no build tool detected in workspace '/Users/kimdongjin/project/scala-angular-graphql'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2022.02.21 00:12:40 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/GraphQLSchema.scala[0m
+2022.02.21 00:12:40 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/schemas/PostSchema.scala[0m
+2022.02.21 00:12:43 INFO  no build target found for /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/GraphQLSchema.scala. Using presentation compiler with project's scala-library version: 3.1.0[0m
+2022.02.21 00:12:44 INFO  time: code lens generation in 4.18s[0m
+2022.03.11 22:20:39 INFO  shutting down Metals[0m
+2022.03.20 18:03:25 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/kimdongjin/project/scala-angular-graphql/.metals/lsp.trace.json or /Users/kimdongjin/Library/Caches/org.scalameta.metals/lsp.trace.json[0m
+2022.03.20 18:03:26 INFO  logging to file /Users/kimdongjin/project/scala-angular-graphql/.metals/metals.log[0m
+2022.03.20 18:03:26 INFO  Started: Metals version 0.11.1 in workspace '/Users/kimdongjin/project/scala-angular-graphql' for client Visual Studio Code 1.65.0.[0m
+2022.03.20 18:03:26 INFO  Parse release: 11.0.13[0m
+2022.03.20 18:03:27 INFO  time: initialize in 1.76s[0m
+2022.03.20 18:03:28 WARN  Build server is not auto-connectable.[0m
+2022.03.20 18:03:28 WARN  no build tool detected in workspace '/Users/kimdongjin/project/scala-angular-graphql'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2022.03.20 18:03:28 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/GraphQLSchema.scala[0m
+2022.03.20 18:03:33 INFO  no build target found for /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/GraphQLSchema.scala. Using presentation compiler with project's scala-library version: 3.1.0[0m
+2022.03.20 18:03:35 INFO  time: code lens generation in 5.98s[0m
+2022.03.21 10:10:34 INFO  [0m
+2022.03.21 10:10:34 INFO  Template applied in /Users/kimdongjin/project/./scala3-cats[0m
+2022.03.21 10:10:34 INFO  [0m
+2022.03.21 10:10:34 INFO  time: ran 'giter8.Giter8' in 1.68s[0m
+3月 21, 2022 10:10:41 午前 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+情報: Unsupported notification method: $/setTrace
+2022.03.22 22:35:34 INFO  shutting down Metals[0m
+2022.05.17 23:14:44 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/kimdongjin/project/scala-angular-graphql/.metals/lsp.trace.json or /Users/kimdongjin/Library/Caches/org.scalameta.metals/lsp.trace.json[0m
+2022.05.17 23:14:44 INFO  logging to file /Users/kimdongjin/project/scala-angular-graphql/.metals/metals.log[0m
+2022.05.17 23:14:44 INFO  Started: Metals version 0.11.5 in workspace '/Users/kimdongjin/project/scala-angular-graphql' for client Visual Studio Code 1.66.2.[0m
+2022.05.17 23:14:45 INFO  time: initialize in 1.16s[0m
+2022.05.17 23:14:45 INFO  Deleting old database format /Users/kimdongjin/project/scala-angular-graphql/.metals/metals.h2.db[0m
+2022.05.17 23:14:45 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.[0m
+2022.05.17 23:14:45 WARN  Build server is not auto-connectable.[0m
+2022.05.17 23:14:45 WARN  no build tool detected in workspace '/Users/kimdongjin/project/scala-angular-graphql'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+2022.05.17 23:14:46 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/resolvers/UserResolver.scala[0m
+2022.05.17 23:14:46 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepository.scala[0m
+2022.05.17 23:14:46 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepositoryImpl.scala[0m
+5月 17, 2022 11:14:47 午後 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 6
+2022.05.17 23:14:47 WARN  no build target for: /Users/kimdongjin/project/scala-angular-graphql/back/app/graphql/GraphQLSchema.scala[0m
+2022.05.17 23:14:49 INFO  no build target found for /Users/kimdongjin/project/scala-angular-graphql/back/app/repositories/PostRepository.scala. Using presentation compiler with project's scala-library version: 3.1.2[0m
+2022.05.17 23:14:50 INFO  time: code lens generation in 3.06s[0m
+2022.05.17 23:14:50 INFO  time: code lens generation in 3.09s[0m
+2022.05.17 23:14:50 INFO  time: code lens generation in 3.18s[0m
+2022.05.18 01:17:08 INFO  shutting down Metals[0m
